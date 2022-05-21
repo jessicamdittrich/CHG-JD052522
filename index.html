@@ -20,7 +20,7 @@
         <section id="timer">
             <h3>Timer</h3>
             <div id="timer-box">
-                <p>0 : <span></span></p>
+                <p>0 : <span id="timer-countdown">60</span></p>
             </div>
         </section>
 
@@ -87,7 +87,7 @@
     <div id="content-end" class="full-page">
         <h3>Time's up!</h3>
         <div class="input-group">
-            <p>Here's your score: <span data-type="user-score"></span></p>
+            <p>Here's your score: <span id="user-score"></span></p>
             <p>Log your score with your initials</p>
             <input type="text" name="user-name" id="user-name" />
             <button id="log-score">Submit!</button>
