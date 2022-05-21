@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="content-start" class="full-page">
+        <h3>Take the javascript coding quiz!</h3>
+        <p>You'll have 60 seconds to complete a quick 5 question quiz. Good luck.</p>
+        <button id="play-game">Yes!</button>
+    </div>
+
+    <div id="content-main" class="full-page">
+
+        <section id="timer">
+            <h3>Timer</h3>
+            <div id="timer-box">
+                <p>0 : <span></span></p>
+            </div>
+        </section>
+
+        <section id="questions">
+
+            <h3>Questions</h3>
+
+            <div id="question-one" class="individual-questions">
+                <p>What's the best way to check your work while working in JavaScript?</p>
+                <button class="answer correct-answer">console.log();</button>
+                <button class="answer wrong-answer">prompt();</button>
+                <button class="answer wrong-answer">alert();</button>
+            </div>
+
+            <div id="question-two" class="individual-questions">
+                <p>What primitive data type must be in quotations?</p>
+                <button class="answer wrong-answer">A boolean</button>
+                <button class="answer correct-answer">A String</button>
+                <button class="answer wrong-answer">All of them</button>
+            </div>
+
+            <div id="question-three" class="individual-questions">
+                <p>What does this: <span>!</span> logical operator do?</p>
+                <button class="answer wrong-answer">Put emphasis on a variable</button>
+                <button class="answer wrong-answer">Change something to false</button>
+                <button class="answer correct-answer">Change something to false and vice versa</button>
+            </div>
+
+            <div id="question-four" class="individual-questions">
+                <p>Objects can only have a maximum of 10 values.</p>
+                <button class="answer wrong-answer">True</button>
+                <button class="answer correct-answer">False</button>
+            </div>
+
+            <div id="question-five" class="individual-questions">
+                <p>What does <span>return;</span> do at the end of a function?</p>
+                <button class="answer wrong-answer">Returns you to the top of the page</button>
+                <button class="answer correct-answer">Stops the execution of a function</button>
+                <button class="answer wrong-answer">Returns to the beginning of a function</button>
+            </div>
+
+            <button id="play-again">Play again?</button>
+
+        </section>
+
+        <section id="leaderboard">
+            <h3>Leaderboard</h3>
+            <div>
+                <p>1. <span></span></p>
+                <p>2. <span></span></p>
+                <p>3. <span></span></p>
+                <p>4. <span></span></p>
+                <p>5. <span></span></p>
+                <p>6. <span></span></p>
+                <p>7. <span></span></p>
+                <p>8. <span></span></p>
+                <p>9. <span></span></p>
+                <p>10. <span></span></p>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="content-end" class="full-page">
+        <h3>Time's up!</h3>
+        <div class="input-group">
+            <p>Here's your score: <span data-type="user-score"></span></p>
+            <p>Log your score with your initials</p>
+            <input type="text" name="user-name" id="user-name" />
+            <button id="log-score">Submit!</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

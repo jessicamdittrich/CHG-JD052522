@@ -1,0 +1,147 @@
+/* WHOLE DOCUMENT TARGETS */
+
+body {
+    margin: 0;
+    font-family: "Gill Sans", "Century Gothic", Arial, Helvetica, sans-serif;
+}
+
+body h3 {
+    text-transform: uppercase;
+    text-shadow: 1.5px 1.5px #CC5500;
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #F5751D;
+}
+
+body p {
+    font-size: 25px;
+    color: #F5751D;
+    text-shadow: 1px 1px #CC5500;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    line-height: 30px;
+}
+
+body button, body input {
+    border:4px outset #F5751D;
+    background-color: #FCA26E;
+    padding: 10px;
+    color: #F5751D;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.full-page{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* CONTENT START & CONTENT END */
+
+#content-start, #content-end {
+    width: 60%;
+    height: 60%;
+    left: 20%;
+    top: 20%;
+    border:25px outset #515151;
+    padding: 25px;
+    background-color: #6D6D6D;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#content-start button {
+    margin-top: 25px;
+}
+
+#content-end span {
+    text-shadow: 0.5px 0.5px #CC5500;
+    color: #FCA26E;
+}
+
+#content-end button {
+    margin-left: 20px;
+}
+
+/* CONTENT MAIN */
+
+#content-main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#content-main section {
+    width: 33.3%;
+    border: 25px outset #515151;
+    padding: 25px;
+    background-color: #6D6D6D;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#content-main #timer div, #content-main #leaderboard div {
+    background-color: black;
+    border: 4px outset #515151;
+    padding: 25px;
+    text-align: left;
+}
+
+#content-main #timer div {
+    text-align: center;
+}
+
+#content-main #timer div p {
+    font-size: 40px;
+}
+
+#content-main #leaderboard div p {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 1.5px inset #515151;
+    padding-bottom: 10px;
+}
+
+#content-main #questions .individual-questions {
+    background-color: black;
+    border: 4px outset #515151;
+}
+
+#content-main #questions .individual-questions button {
+    display: block;
+    margin: 10px auto;
+}
+
+#content-main #questions span {
+    text-shadow: 0.5px 0.5px #CC5500;
+    color: #FCA26E;
+}
+
+/* HIDING ELEMENTS */
+
+#content-start, #content-main, #content-end {
+    display: none;
+}
+
+#question-one, #question-two, #question-three, #question-four, #question-five {
+    display: none;
+}
+
+#play-again {
+    display: none;
+}
