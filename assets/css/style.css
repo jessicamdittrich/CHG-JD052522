@@ -45,6 +45,10 @@ body button, body input {
     text-align: center;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* CONTENT START & CONTENT END */
 
 #content-start, #content-end {
@@ -134,14 +138,10 @@ body button, body input {
 
 /* HIDING ELEMENTS */
 
-#content-start, #content-main, #content-end {
+#content-start, #content-main, #content-end, #individual-questions, #play-again {
     display: none;
 }
 
-#question-one, #question-two, #question-three, #question-four, #question-five {
-    display: none;
-}
-
-#play-again {
+#answer-was #correct-choice, #answer-was #wrong-choice {
     display: none;
 }
