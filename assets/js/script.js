@@ -48,32 +48,37 @@ function loadStart() {
             }, 1000);
         }
 
-        
-
-        // REMOVED 
-        // Array.from(buttonAnswer).forEach(link => {
-        //     link.addEventListener('click', function() {
-        //         buttonAnswer.value = "answer";
-        //         console.log(buttonAnswer.value);
-
-        //         // IF ANSWER = CORRECT, SHOW CORRECT ***DOES NOT WORK CORRECTLY
-        //         if (buttonAnswer.value = "answer correct-answer") {
-        //             console.log(buttonAnswer.value);
-        //             correctChoice.setAttribute("style", "display: inline;");
-        //         // IF ANSWER - WRONG, SHOW WRONG
-        //         } else {
-        //             wrongChoice.setAttribute("style", "display: inline;");
-        //             // REMOVE TIME IF WRONG ***STILL TO DO
-        //         }
-        //         // HIDE QUESTION ONE AND SHOW QUESTION TWO
-        //         qOne.setAttribute("style", "display: none;");
-        //         qTwo.setAttribute("style", "display: inline-block;");
-        //     });
-        // });
-
+        // LOOPING QUESTIONS
+        var i = 0;
+        while (i < questions.length) {
+            questions[0].setAttribute("style", "display: inline-block;");
+            
+            // ASKING QUESTIONS
+            buttonAnswer.forEach(eachButton => {
+                eachButton.addEventListener("click", function() {
+                    if (value = "answer correct-answer") {
+                        console.log(buttonAnswer.value);
+                        correctChoice.setAttribute("style", "display: inline;");
+                        // IF ANSWER - WRONG, SHOW WRONG
+                        } else {
+                            wrongChoice.setAttribute("style", "display: inline;");
+                            // REMOVE TIME IF WRONG ***STILL TO DO
+                    }
+                    questions[0].setAttribute("style", "display: none;");
+                });
+            });
+        i++;
+        if (i > questions.length) break;
+        }
         countdown();
 
     });
+
+    // function saveData() {
+    //     correctChoice = 10;
+    //     wrongChoice = 5;
+    // }
+    // saveData();
 
 }
 
