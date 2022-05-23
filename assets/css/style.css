@@ -138,7 +138,7 @@ button:hover {
 
 /* HIDING ELEMENTS */
 
-#content-start, #content-main, #content-end, .individual-questions, #play-again {
+#content-main, #content-end, .individual-questions, #play-again {
     display: none;
 }
 

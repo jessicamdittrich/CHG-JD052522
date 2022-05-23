@@ -34,8 +34,6 @@ var wrongChoice = document.querySelector("#wrong-choice");
 // TIMER VARIABLE
 var timeLeft = 10; // RETURN TO 60
 
-/* ***** FUNCTIONS ***** */
-
 // QUESTIONS
 function clickAnswerHandler(event) {
     var answerCheck = event.target.classList.length;
@@ -63,6 +61,13 @@ function clickAnswerHandler(event) {
         questions[userQuestionCounter].setAttribute("style", "display: inline-block;");
         correctChoice.setAttribute("style", "display: none;");
         wrongChoice.setAttribute("style", "display: none;");
+        
+        // ONCE QUESTIONS END TIMER STOPS AND CONTENT-END APPEARS
+        /*if (questions[userQuestionCounter] = undefined) {
+            console.log(questions[userQuestionCounter]);
+            appearMain.setAttribute("style", "display: none;");
+            appearEnd.setAttribute("style", "display: inline;");
+        }*/
         return;
     }, 500);
 }
@@ -87,35 +92,34 @@ function countdown() {
     }, 1000);
 }
 
+// MAIN FUNCTION
+function loadStart() {
+    // MAKES CONTENT-START VISIBLE
+    appearStart.setAttribute("style", "display: inline;");
+
+    // MAKES CONTENT-START DISAPPEAR AND CONTENT-MAIN APPEAR
+    buttonPlayGame.addEventListener('click', function () {
+        appearStart.setAttribute("style", "display: none;");
+        appearMain.setAttribute("style", "display: flex;");
+        questions[0].setAttribute("style", "display: inline-block;");
+        // LOOP FOR BUTTONS TO BREAKUP CONNECTION OF BUTTONS
+        for (var i = 0; i < buttonAnswer.length; i++){
+            buttonAnswer[i].addEventListener("click", clickAnswerHandler)
+        }
+        // RUN TIMER
+        countdown();
+    });
+}
+
 // ADD DATA NAME AND SCORE TO LEADERBOARD
 function showNameAndScore(){
     // PULLING DATA FROM LOCAL STORAGE
     userName = localStorage.getItem("user-name");
     userScoreCounter = localStorage.getItem("answer-count");
-    // LOOP TO LOOP THROUGH USERS PLAYED - STILL TO BE DONE
-    for (var i = 0; i < userNamePulled.length; i++){
     // PUTTING DATA INTO LEADERBOARD TEXT CONTENT
     userNamePulled[0].textContent = userName;
-    
-    }
-
     userFinalScore[0].textContent = userScoreCounter;
 }
-
-/* ***** EVENT LISTENERS ***** */
-
-// CLICK PLAY AND CONTENT-START DISAPPEARS, CONTENT-MAIN APPEARS, TIMER & QUESTIONS START
-buttonPlayGame.addEventListener('click', function () {
-    appearStart.setAttribute("style", "display: none;");
-    appearMain.setAttribute("style", "display: flex;");
-    questions[0].setAttribute("style", "display: inline-block;");
-    // LOOP FOR BUTTONS TO BREAKUP CONNECTION OF BUTTONS
-    for (var i = 0; i < buttonAnswer.length; i++){
-        buttonAnswer[i].addEventListener("click", clickAnswerHandler)
-    }
-    // RUN TIMER
-    countdown();
-});
 
 // CLICK TO LOG NAME AND SCORE
 buttonLogScore.addEventListener("click", function(event) {
@@ -136,7 +140,22 @@ buttonLogScore.addEventListener("click", function(event) {
     questions[4].setAttribute("style", "display: none;");
 });
 
-// CLICK PLAY AGAIN BUTTON AND PAGE RELOADS
+// PLAY AGAIN BUTTON RESTARTS QUESTIONS AND TIMER
 buttonPlayAgain.addEventListener("click", function() {
-    window.location.reload();
+    // ONCE CLICKED BUTTONS DISAPPEAR AND QUESTIONS BEGIN AGAIN
+    buttonPlayAgain.setAttribute("style", "display: none;");
+    // COPIED FROM LINE 64 UNDER LOAD START
+    userQuestionCounter++;
+    questions[0].setAttribute("style", "display: inline-block;"); // END COPIED SECTION
+
+    // RESETS SCORE COUNTER
+    userScoreCounter = 0;
+
+    // RESETS TIMER
+    timeLeft = 60;
+    timer.textContent = timeLeft;
+    countdown();
+
 });
+
+loadStart();
