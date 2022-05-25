@@ -128,6 +128,8 @@ buttonLogScore.addEventListener("click", function(event) {
     // HIDE CONTENT-END AND SHOW CONTENT-MAIN WITHOUT QUESTIONS BUT SHOW PLAY AGAIN BUTTON
     appearMain.setAttribute("style", "display: flex;");
     appearEnd.setAttribute("style", "display: none;");
+    correctChoice.setAttribute("style", "display: none;");
+    wrongChoice.setAttribute("style", "display: none;");
     buttonPlayAgain.setAttribute("style", "display: inline;");
     questions[0].setAttribute("style", "display: none;");
     questions[1].setAttribute("style", "display: none;");
