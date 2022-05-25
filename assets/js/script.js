@@ -32,7 +32,7 @@ var correctChoice = document.querySelector("#correct-choice");
 var wrongChoice = document.querySelector("#wrong-choice");
 
 // TIMER VARIABLE
-var timeLeft = 10; // RETURN TO 60
+var timeLeft = 30;
 
 /* ***** FUNCTIONS ***** */
 
@@ -134,6 +134,8 @@ buttonLogScore.addEventListener("click", function(event) {
     questions[2].setAttribute("style", "display: none;");
     questions[3].setAttribute("style", "display: none;");
     questions[4].setAttribute("style", "display: none;");
+    questions[5].setAttribute("style", "display: none;");
+    timeLeft = 0;
 });
 
 // CLICK PLAY AGAIN BUTTON AND PAGE RELOADS
